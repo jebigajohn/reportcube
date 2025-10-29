@@ -43,7 +43,7 @@ export function NavBar() {
               className="flex items-center gap-2 cursor-pointer"
             >
               <img
-                src={theme === 'dark' ? '/logo-dark.png' : '/logo-light.png'}
+                src={theme === 'dark' ? 'logo-dark.png' : 'logo-light.png'}
                 alt="ReportCube"
                 className="h-20 w-auto"
               />

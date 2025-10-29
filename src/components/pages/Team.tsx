@@ -6,19 +6,19 @@ export function Team() {
       name: 'Johann Balzer',
       role: 'Architekt & Schadenregulierer',
       // tagline: '15+ Jahre Versicherungs-KI-Innovation',
-      imageUrl: '/fotos_personal/DSCF1167.jpg',
+      imageUrl: 'DSCF1167.jpg',
     },
     {
       name: 'Alexej Ebel',
       role: 'Laboratory Test Engineer ',
       // tagline: 'Leitet KI-Forschung und -Entwicklung',
-      imageUrl: '/fotos_personal/DSCF1131_1.jpg',
+      imageUrl: 'DSCF1131_1.jpg',
     },
     {
       name: 'John Staub',
       role: 'AI Solutions Engineer',
       // tagline: 'Entwickelt intuitive Versicherungslösungen',
-      imageUrl: '/fotos_personal/DSCF1152_1.jpg',
+      imageUrl: 'DSCF1152_1.jpg',
     },
   ]
 

@@ -55,7 +55,7 @@ export function Hero() {
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-[var(--rc-border)]">
               <ImageWithFallback
                 // src="https://images.unsplash.com/photo-1748609160056-7b95f30041f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBkYXNoYm9hcmQlMjBhbmFseXRpY3N8ZW58MXx8fHwxNzYxNTU3NzY5fDA&ixlib=rb-4.1.0&q=80&w=1080"
-                src="/tool2.png"
+                src="tool2.png"
                 alt="ReportCube Dashboard"
                 className="w-full h-auto"
               />

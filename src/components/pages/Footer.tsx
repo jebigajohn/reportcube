@@ -45,7 +45,7 @@ export function Footer() {
               className="flex items-center gap-3 mb-4"
             >
               <img
-                src={theme === 'dark' ? '/logo-dark.png' : '/logo-light.png'}
+                src={theme === 'dark' ? 'logo-dark.png' : 'logo-light.png'}
                 alt="ReportCube"
                 className="h-12 w-auto cursor-pointer"
               />
