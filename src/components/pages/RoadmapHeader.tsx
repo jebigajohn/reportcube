@@ -5,7 +5,7 @@ interface RoadmapHeaderProps {
 
 export function RoadmapHeader({
   title = 'Unsere Ziele & Roadmap',
-  subtitle = 'Unsere aktuelle Roadmap',
+  // subtitle = 'Unsere aktuelle Roadmap',
 }: RoadmapHeaderProps) {
   return (
     <div className="text-center max-w-3xl mx-auto mb-16">

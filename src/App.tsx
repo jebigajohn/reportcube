@@ -11,7 +11,7 @@ import { NavBar } from './components/pages/NavBar'
 import { Hero } from './components/pages/Hero'
 import { ProductOverview } from './components/pages/ProductOverview'
 import { AITechnology } from './components/pages/AITechnology'
-import { VisionMission } from './components/pages/VisionMission'
+
 import { FeaturesGrid } from './components/pages/FeaturesGrid'
 import { Roadmap } from './components/pages/Roadmap'
 import { Team } from './components/pages/Team'
