@@ -18,7 +18,7 @@ export function CallToAction() {
   return (
     <section
       id="cta"
-      className="py-24 lg:py-32 bg-[var(--rc-surface)] from-background to-[var(--rc-surface)]"
+      className="py-24 lg:py-32 bg-[var(--rc-bg)] from-background to-[var(--rc-surface)]"
     >
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <motion.div

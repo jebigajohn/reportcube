@@ -23,7 +23,10 @@ export function Team() {
   ]
 
   return (
-    <section id="team" className="py-24 lg:py-32 bg-rc-surface bg-opacity-30">
+    <section
+      id="team"
+      className="py-24 lg:py-32 bg-[var(--rc-bg)] bg-opacity-30"
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl mb-6 text-rc-text">

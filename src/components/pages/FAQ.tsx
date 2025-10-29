@@ -40,7 +40,7 @@ export function FAQ() {
   ]
 
   return (
-    <section id="faq" className="py-24 lg:py-32 bg-[color:var(--rc-bg)]">
+    <section id="faq" className="py-24 lg:py-32 bg-[color:var(--rc-surface)]">
       <div className="max-w-4xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl mb-6 text-[var(--rc-text)]">
@@ -56,7 +56,7 @@ export function FAQ() {
             <AccordionItem
               key={index}
               value={`item-${index}`}
-              className="bg-[var(--rc-surface)] border border-[var(--rc-border)] rounded-xl px-6 data-[state=open]:shadow-md transition-shadow"
+              className="bg-[var(--rc-bg)] border border-[var(--rc-border)] rounded-xl px-6 data-[state=open]:shadow-md transition-shadow"
             >
               <AccordionTrigger className="text-left text-[var(--rc-text)] hover:no-underline py-5">
                 {faq.question}

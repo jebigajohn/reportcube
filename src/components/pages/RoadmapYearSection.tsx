@@ -28,7 +28,7 @@ export function RoadmapYearSection({
 
       {/* Content */}
       <div className="flex-1 -mt-1">
-        <div className="bg-[color:var(--rc-surface)] border border-[color:var(--rc-border)] rounded-2xl p-6 md:p-8 shadow-sm">
+        <div className="bg-[color:var(--rc-bg)] border border-[color:var(--rc-border)] rounded-2xl p-6 md:p-8 shadow-sm">
           <h3 className="mb-4 text-[color:var(--rc-text)]">{phase}</h3>
 
           <ul className="space-y-2">

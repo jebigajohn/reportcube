@@ -66,7 +66,7 @@ export function Hero() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
-              className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-[var(--rc-surface)] px-6 py-3 rounded-full shadow-lg border border-[var(--rc-border)]"
+              className="absolute -bottom-6 left-1/2 transform -translate-x-1/2 bg-[var(--rc-bg)] px-6 py-3 rounded-full shadow-lg border border-[var(--rc-border)]"
             >
               <p className="text-sm text-[var(--rc-text)]">
                 <span className="text-[var(--rc-accent-500)]">95%</span>{' '}

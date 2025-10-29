@@ -22,7 +22,7 @@ export function TeamCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
-      className="bg-[var(--rc-bg)] rounded-2xl overflow-hidden border border-[var(--rc-border)] hover:shadow-lg transition-shadow"
+      className="bg-[var(--rc-surface)] rounded-2xl overflow-hidden border border-[var(--rc-border)] hover:shadow-lg transition-shadow"
     >
       <div className="aspect-square overflow-hidden bg-[var(--rc-surface)]">
         <ImageWithFallback

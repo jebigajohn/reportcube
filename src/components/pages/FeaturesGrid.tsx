@@ -42,7 +42,7 @@ export function FeaturesGrid() {
   ]
 
   return (
-    <section id="features" className="py-24 lg:py-32 bg-[var(--rc-surface)]">
+    <section id="features" className="py-24 lg:py-32 bg-[var(--rc-bg)]">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl mb-6 text-[var(--rc-text)]">

@@ -35,7 +35,7 @@ export function Roadmap() {
   ]
 
   return (
-    <section id="roadmap" className="py-20 md:py-32 bg-[color:var(--rc-bg)]">
+    <section id="roadmap" className="py-20 md:py-32 bg-[var(--rc-surface)]">
       <div className="container mx-auto px-4 md:px-6 max-w-5xl">
         <RoadmapHeader
           title="Unsere Ziele & Roadmap"
