@@ -13,6 +13,7 @@ export function CallToAction() {
   const [consent, setConsent] = useState(false)
   const [loading, setLoading] = useState(false)
   const [status, setStatus] = useState<null | 'ok' | 'error'>(null)
+  const API_BASE = import.meta.env.VITE_API_BASE
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -26,19 +27,23 @@ export function CallToAction() {
     setLoading(true)
     setStatus(null)
     try {
-      const res = await fetch('http://localhost:3001/api/lead', {
+      const res = await fetch(`${API_BASE}/contact`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
+          name: fullName || company || email,
           email,
-          fullName,
-          company,
-          message,
-          consent,
+          phone: '',
+          message:
+            message ||
+            `Firma: ${company || '—'}\nEinwilligung: ${consent ? 'Ja' : 'Nein'}`,
+          topic: 'Website CTA',
         }),
       })
 
-      if (!res.ok) throw new Error('Request failed')
+      const data = await res.json()
+      if (!res.ok || !data?.ok) throw new Error('send_failed')
+
       setStatus('ok')
       setEmail('')
       setFullName('')
