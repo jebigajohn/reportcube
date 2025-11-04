@@ -49,7 +49,7 @@ export function FeaturesGrid() {
             Digitale Schadenregulierung neu definiert
           </h2>
           <p className="text-lg text-[var(--rc-text-soft)] max-w-3xl mx-auto">
-            ReportCube verbindet Fachwissen, Daten und smarte Algorithmen – für
+            Report Cube verbindet Fachwissen, Daten und smarte Algorithmen – für
             schnellere, transparentere und nachvollziehbare Entscheidungen im
             Schadenprozess.
           </p>

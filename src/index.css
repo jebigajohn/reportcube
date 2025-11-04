@@ -43,7 +43,7 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  /* ReportCube Color System */
+  /* Report Cube Color System */
   --rc-primary-900: #0e0e0e;
   --rc-primary-700: #1c1c1e;
   --rc-primary-500: #2c2c2e;
@@ -104,7 +104,7 @@
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
 
-  /* ReportCube Dark Mode Colors */
+  /* Report Cube Dark Mode Colors */
   --rc-primary-900: #e5e5ea;
   --rc-primary-700: #c7c7cc;
   --rc-primary-500: #8e8e93;
@@ -157,7 +157,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* ReportCube Theme Colors */
+  /* Report Cube Theme Colors */
   --color-rc-primary-900: var(--rc-primary-900);
   --color-rc-primary-700: var(--rc-primary-700);
   --color-rc-primary-500: var(--rc-primary-500);

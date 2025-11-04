@@ -60,7 +60,7 @@ export function ProductOverview() {
           className="mb-16"
         >
           <h2 className="text-4xl lg:text-5xl mb-6 text-[var(--rc-text)]">
-            Ihre Vorteile mit ReportCube
+            Ihre Vorteile mit Report Cube
           </h2>
           <p className="text-lg text-[var(--rc-text-soft)] max-w-3xl mx-auto">
             Die KI-gestützte Plattform für digitale Schadenregulierung: weniger
@@ -102,7 +102,7 @@ export function ProductOverview() {
           className="max-w-3xl mx-auto mt-10 border border-[var(--rc-border)] bg-[var(--rc-surface)] rounded-2xl p-6"
         >
           <blockquote className="text-[var(--rc-text)] italic">
-            „Mit ReportCube schaffen wir eine Arbeitsweise, die spürbar
+            „Mit Report Cube schaffen wir eine Arbeitsweise, die spürbar
             entlastet: Routineaufgaben erledigt die Plattform, Sie konzentrieren
             sich auf die wichtigen Entscheidungen. Gleichzeitig liefern wir
             geprüfte Daten, verlässliche Berichte und eine sichere Grundlage für

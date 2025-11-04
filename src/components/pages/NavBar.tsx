@@ -3,6 +3,7 @@ import { Menu, X, Sun, Moon } from 'lucide-react'
 import { Button } from '../ui/button'
 import { useTheme } from './ThemeProvider'
 import { useRouter } from '../hooks/useRouter'
+import { withBase } from '../../utils/basePath'
 
 const scrollToId = (id: string) => {
   const tryScroll = (retries = 16) => {
@@ -22,10 +23,13 @@ export function NavBar() {
   const { path, navigate } = useRouter()
 
   const goToSection = (id: string) => {
-    if (path !== '/') {
-      navigate('/')
+    const homePath = withBase('/') // z.B. "/reportcube/"
+    // Manche Router liefern "/" lokal – daher beide zulassen:
+    const onHome = path === homePath || path === '/'
 
-      scrollToId(id)
+    if (!onHome) {
+      navigate(homePath) // zur Startseite (mit Base) navigieren
+      scrollToId(id) // danach smooth scrollen (robuster Retry oben)
     } else {
       scrollToId(id)
     }
@@ -41,10 +45,12 @@ export function NavBar() {
             <button
               onClick={() => goToSection('hero')}
               className="flex items-center gap-2 cursor-pointer"
+              aria-label="Zur Startseite"
             >
+              {/* Optional robuster mit withBase für Assets: */}
               <img
                 src={theme === 'dark' ? 'logo-dark.png' : 'logo-light.png'}
-                alt="ReportCube"
+                alt="Report Cube"
                 className="h-20 w-auto"
               />
             </button>
@@ -64,7 +70,6 @@ export function NavBar() {
             >
               Überblick
             </button>
-
             <button
               onClick={() => goToSection('features')}
               className="text-muted-foreground hover:text-foreground transition-colors cursor-pointer"
@@ -114,6 +119,7 @@ export function NavBar() {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-foreground"
+              aria-label="Menü öffnen/schließen"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>

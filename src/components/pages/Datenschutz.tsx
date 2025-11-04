@@ -16,7 +16,9 @@ export default function Datenschutz() {
               Verantwortlich im Sinne der Datenschutz-Grundverordnung (DSGVO)
               ist:
               <br />
-              <strong>ReportCube Gesellschaft bürgerlichen Rechts (GbR)</strong>
+              <strong>
+                Report Cube Gesellschaft bürgerlichen Rechts (GbR)
+              </strong>
               <br />
               Vertreten durch die Gesellschafter:
               <br />
@@ -80,10 +82,24 @@ export default function Datenschutz() {
               5. Verarbeitung bei Kontaktaufnahme
             </h2>
             <p>
-              Wenn Sie uns per E-Mail kontaktieren, werden die von Ihnen
-              übermittelten Daten (z. B. Name, E-Mail-Adresse, Nachricht)
-              ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Eine
-              Weitergabe an Dritte findet nicht statt.
+              Wenn Sie unser Kontaktformular nutzen, werden die von Ihnen
+              angegebenen Daten (z.&nbsp;B. Name, Firma, E-Mail-Adresse,
+              Nachricht und ggf. Ihre Einwilligung zur Kontaktaufnahme) zur
+              Bearbeitung Ihrer Anfrage und für Rückfragen verarbeitet.
+              Rechtsgrundlage ist Art.&nbsp;6&nbsp;Abs.&nbsp;1&nbsp;lit.&nbsp;b
+              DSGVO (Vertragserfüllung bzw. vorvertragliche Maßnahmen) sowie
+              Art.&nbsp;6&nbsp;Abs.&nbsp;1&nbsp;lit.&nbsp;a DSGVO
+              (Einwilligung).
+            </p>
+            <p className="mt-2">
+              Ihre Angaben werden in einer gesicherten Datenbank gespeichert und
+              ausschließlich für die Bearbeitung der Anfrage verwendet. Eine
+              Weitergabe an Dritte erfolgt nicht. Sie können Ihre Einwilligung
+              zur Kontaktaufnahme jederzeit per E-Mail an&nbsp;
+              <a href="mailto:service@reportcube.de" className="underline">
+                service@reportcube.de
+              </a>
+              &nbsp;widerrufen.
             </p>
           </section>
 

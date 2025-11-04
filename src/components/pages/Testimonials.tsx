@@ -5,7 +5,7 @@ export function Testimonials() {
   const testimonials = [
     {
       quote:
-        'ReportCube hat unseren Schadenbearbeitungsprozess transformiert. Was früher Stunden dauerte, nimmt jetzt nur Minuten in Anspruch, und die Genauigkeit ist bemerkenswert.',
+        'Report Cube hat unseren Schadenbearbeitungsprozess transformiert. Was früher Stunden dauerte, nimmt jetzt nur Minuten in Anspruch, und die Genauigkeit ist bemerkenswert.',
       author: 'Marcus Hoffmann',
       position: 'Schadensdirektor',
       company: 'Provinzial Versicherung',
@@ -43,7 +43,7 @@ export function Testimonials() {
             Vertraut von Profis
           </h2>
           <p className="text-lg text-[var(--rc-text-soft)] max-w-3xl mx-auto">
-            Sehen Sie, wie ReportCube Versicherungsunternehmen dabei hilft,
+            Sehen Sie, wie Report Cube Versicherungsunternehmen dabei hilft,
             schnellere und genauere Ergebnisse zu liefern.
           </p>
         </div>

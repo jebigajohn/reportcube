@@ -1,9 +1,6 @@
 import './index.css'
-
 import { useEffect } from 'react'
-import { hasConsent } from './components/types/consent' // Pfad so belassen, wenn Datei bei dir dort liegt
-
-// Seiten
+import { hasConsent } from './components/types/consent'
 import Impressum from './components/pages/Impressum'
 import Datenschutz from './components/pages/Datenschutz'
 import { ThemeProvider } from './components/pages/ThemeProvider'
@@ -11,19 +8,21 @@ import { NavBar } from './components/pages/NavBar'
 import { Hero } from './components/pages/Hero'
 import { ProductOverview } from './components/pages/ProductOverview'
 import { AITechnology } from './components/pages/AITechnology'
-
 import { FeaturesGrid } from './components/pages/FeaturesGrid'
 import { Roadmap } from './components/pages/Roadmap'
 import { Team } from './components/pages/Team'
 import { FAQ } from './components/pages/FAQ'
 import { CallToAction } from './components/pages/CallToAction'
 import { CookieConsent } from './components/pages/CookieConsent'
-
 import { useRouter } from './components/hooks/useRouter'
 import { Footer } from './components/pages/Footer'
 
 export default function App() {
   const { path } = useRouter()
+
+  // 🔧 Base-Pfad (z. B. "/reportcube") aus dem aktuellen Pfad entfernen
+  const base = (import.meta.env.BASE_URL ?? '/').replace(/\/$/, '')
+  const normalizedPath = path.replace(new RegExp(`^${base}`), '') || '/'
 
   useEffect(() => {
     function init(e?: CustomEvent) {
@@ -38,9 +37,9 @@ export default function App() {
     return () => window.removeEventListener('cookie-consent-saved', handler)
   }, [])
 
-  // einfacher Switch
-  const isImpressum = path === '/impressum'
-  const isDatenschutz = path === '/datenschutz'
+  // ✅ Vergleiche jetzt gegen die "nackten" Routen:
+  const isImpressum = normalizedPath === '/impressum'
+  const isDatenschutz = normalizedPath === '/datenschutz'
 
   return (
     <ThemeProvider>
@@ -56,7 +55,6 @@ export default function App() {
               <Hero />
               <ProductOverview />
               <AITechnology />
-              {/* <VisionMission /> */}
               <FeaturesGrid />
               <Roadmap />
               <Team />

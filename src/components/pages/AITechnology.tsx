@@ -63,7 +63,7 @@ export function AITechnology() {
             Module im Überblick
           </h2>
           <p className="text-lg text-[var(--rc-text-soft)] max-w-3xl mx-auto">
-            ReportCube vereint Fachwissen, Daten und künstliche Intelligenz in
+            Report Cube vereint Fachwissen, Daten und künstliche Intelligenz in
             drei Kernmodulen, die den gesamten Schadenprozess digitalisieren –
             von der Erfassung bis zur automatisierten Kostenplanung.
           </p>

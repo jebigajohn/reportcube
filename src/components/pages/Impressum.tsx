@@ -10,7 +10,7 @@ export default function Impressum() {
           </p>
 
           <p>
-            <strong>ReportCube Gesellschaft bürgerlichen Rechts (GbR)</strong>
+            <strong>Report Cube Gesellschaft bürgerlichen Rechts (GbR)</strong>
             <br />
             Vertreten durch die Gesellschafter:
             <br />

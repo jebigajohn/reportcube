@@ -30,7 +30,7 @@ export function Hero() {
               <span className="block mt-2">Schnell. Präzise. Sicher.</span>
             </h1>
             <p className="text-lg lg:text-xl text-[var(--rc-text-soft)] mb-8 max-w-[58ch] mx-auto lg:mx-0">
-              ReportCube verbindet künstliche Intelligenz mit
+              Report Cube verbindet künstliche Intelligenz mit
               Versicherungsexpertise, um prüfungssichere Schadensberichte in
               Minuten zu erstellen.
             </p>
@@ -56,7 +56,7 @@ export function Hero() {
               <ImageWithFallback
                 // src="https://images.unsplash.com/photo-1748609160056-7b95f30041f0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2Rlcm4lMjBkYXNoYm9hcmQlMjBhbmFseXRpY3N8ZW58MXx8fHwxNzYxNTU3NzY5fDA&ixlib=rb-4.1.0&q=80&w=1080"
                 src="tool2.png"
-                alt="ReportCube Dashboard"
+                alt="Report Cube Dashboard"
                 className="w-full h-auto"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--rc-accent-500)]/10 to-transparent pointer-events-none"></div>

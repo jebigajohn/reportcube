@@ -2,6 +2,7 @@
 import { useTheme } from './ThemeProvider'
 import { Separator } from '../ui/separator'
 import { useRouter } from '../hooks/useRouter'
+import { withBase } from '../../utils/basePath'
 
 // robustes Scrollen (wartet bis das Ziel im DOM ist)
 const scrollToId = (id: string) => {
@@ -21,9 +22,11 @@ export function Footer() {
   const { path, navigate } = useRouter()
 
   const goHome = (id: string = 'hero') => {
-    if (path !== '/') {
-      navigate('/') // triggert popstate → App rendert Homepage
-      scrollToId(id) // wartet bis #hero vorhanden ist
+    // nutzt den Base-Pfad automatisch
+    const homePath = withBase('/')
+    if (path !== homePath && path !== '/') {
+      navigate(homePath)
+      scrollToId(id)
     } else {
       scrollToId(id)
     }
@@ -46,12 +49,12 @@ export function Footer() {
             >
               <img
                 src={theme === 'dark' ? 'logo-dark.png' : 'logo-light.png'}
-                alt="ReportCube"
+                alt="Report Cube"
                 className="h-12 w-auto cursor-pointer"
               />
             </button>
             <p className="text-[var(--rc-text-soft)] text-sm leading-relaxed max-w-prose">
-              ReportCube ist eine KI-gestützte Plattform für Versicherungen.{' '}
+              Report Cube ist eine KI-gestützte Plattform für Versicherungen.{' '}
               <br />
               Wir unterstützen bei Schadenaufnahme, Analyse, Kalkulation und
               Reporting – schnell, präzise und DSGVO-konform.
@@ -62,7 +65,7 @@ export function Footer() {
           <div>
             <h4 className="mb-3 font-medium">Kontakt</h4>
             <ul className="space-y-2 text-sm text-[var(--rc-text-soft)]">
-              <li>ReportCube GbR</li>
+              <li>Report Cube GbR</li>
               <li>Thomas-Mann-Str. 12 · 59329 Wadersloh</li>
               <li>
                 E-Mail:{' '}
@@ -82,7 +85,7 @@ export function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <button
-                  onClick={() => navigate('/impressum')}
+                  onClick={() => navigate(withBase('/impressum'))}
                   className="text-[var(--rc-text-soft)] hover:text-[var(--rc-text)] transition-colors underline-offset-2 hover:underline cursor-pointer"
                 >
                   Impressum
@@ -90,7 +93,7 @@ export function Footer() {
               </li>
               <li>
                 <button
-                  onClick={() => navigate('/datenschutz')}
+                  onClick={() => navigate(withBase('/datenschutz'))}
                   className="text-[var(--rc-text-soft)] hover:text-[var(--rc-text)] transition-colors underline-offset-2 hover:underline cursor-pointer"
                 >
                   Datenschutz
@@ -111,7 +114,7 @@ export function Footer() {
         <Separator className="bg-[var(--rc-border)] mb-6" />
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-[var(--rc-text-soft)]">
-          <p>© {new Date().getFullYear()} ReportCube GbR</p>
+          <p>© {new Date().getFullYear()} Report Cube GbR</p>
           <div className="flex gap-6">{/* Socials optional */}</div>
         </div>
       </div>

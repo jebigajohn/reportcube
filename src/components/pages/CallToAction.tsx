@@ -1,25 +1,59 @@
 import { motion } from 'motion/react'
 import { Button } from '../ui/button'
 import { Input } from '../ui/input'
-import { ArrowRight, Mail } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
 import { useState } from 'react'
+import { withBase } from '../../utils/basePath'
 
 export function CallToAction() {
   const [email, setEmail] = useState('')
+  const [fullName, setFullName] = useState('')
+  const [company, setCompany] = useState('')
+  const [message, setMessage] = useState('')
+  const [consent, setConsent] = useState(false)
+  const [loading, setLoading] = useState(false)
+  const [status, setStatus] = useState<null | 'ok' | 'error'>(null)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    alert(
-      `Kontakt-Anfrage eingereicht für: ${email}\nWir melden uns zeitnah mit weiteren Informationen.`
-    )
-    setEmail('')
+    if (!consent) {
+      alert(
+        'Bitte bestätigen Sie die Einwilligung zur Kontaktaufnahme, bevor Sie fortfahren.'
+      )
+      return
+    }
+
+    setLoading(true)
+    setStatus(null)
+    try {
+      const res = await fetch('http://localhost:3001/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email,
+          fullName,
+          company,
+          message,
+          consent,
+        }),
+      })
+
+      if (!res.ok) throw new Error('Request failed')
+      setStatus('ok')
+      setEmail('')
+      setFullName('')
+      setCompany('')
+      setMessage('')
+      setConsent(false)
+    } catch {
+      setStatus('error')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
-    <section
-      id="cta"
-      className="py-24 lg:py-32 bg-[var(--rc-bg)] from-background to-[var(--rc-surface)]"
-    >
+    <section id="cta" className="py-24 lg:py-32 bg-[var(--rc-bg)]">
       <div className="max-w-5xl mx-auto px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -28,52 +62,95 @@ export function CallToAction() {
           transition={{ duration: 0.6 }}
           className="bg-[var(--rc-accent-500)] dark:bg-[var(--rc-accent-400)] rounded-3xl p-12 lg:p-16 text-center text-white relative overflow-hidden shadow-2xl"
         >
-          {/* Background Glow */}
-          <div className="absolute inset-0 opacity-15 pointer-events-none">
-            <div className="absolute top-0 right-0 w-72 h-72 bg-white/60 rounded-full blur-3xl"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/40 rounded-full blur-3xl"></div>
-          </div>
-
           <div className="relative z-10">
             <h2 className="text-4xl lg:text-5xl mb-6 font-medium">
-              Interesse an ReportCube?
+              Interesse an Report Cube?
             </h2>
             <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto leading-relaxed">
               Erfahren Sie, wie KI Ihre Schadenbearbeitung vereinfachen kann –
-              und wie ReportCube Sie dabei unterstützt, Zeit und Aufwand zu
+              und wie Report Cube Sie dabei unterstützt, Zeit und Aufwand zu
               sparen.
             </p>
 
-            <form onSubmit={handleSubmit} className="max-w-md mx-auto">
-              <div className="flex flex-col sm:flex-row gap-3">
-                <div className="relative flex-1">
-                  <Mail
-                    className="absolute left-4 top-1/2 transform -translate-y-1/2 text-[var(--rc-gray-500)]"
-                    size={20}
-                  />
-                  <Input
-                    type="email"
-                    placeholder="ihre.email@firma.de"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    required
-                    className="w-full pl-12 py-6 bg-[var(--rc-white)] text-[var(--rc-gray-900)] border border-[var(--rc-border)] rounded-xl focus-visible:ring-2 focus-visible:ring-[var(--rc-accent-400)]"
-                  />
-                </div>
+            <form
+              onSubmit={handleSubmit}
+              className="max-w-md mx-auto flex flex-col gap-3 text-left"
+            >
+              <Input
+                type="text"
+                placeholder="Ihr Name (optional)"
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+                className="py-5 bg-[var(--rc-white)] text-[var(--rc-gray-900)] border border-[var(--rc-border)] rounded-xl"
+              />
+              <Input
+                type="text"
+                placeholder="Firma (optional)"
+                value={company}
+                onChange={(e) => setCompany(e.target.value)}
+                className="py-5 bg-[var(--rc-white)] text-[var(--rc-gray-900)] border border-[var(--rc-border)] rounded-xl"
+              />
+              <Input
+                type="email"
+                placeholder="ihre.email@firma.de"
+                required
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="py-5 bg-[var(--rc-white)] text-[var(--rc-gray-900)] border border-[var(--rc-border)] rounded-xl"
+              />
+              <textarea
+                placeholder="Ihre Nachricht (optional)"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                className="py-4 px-4 min-h-[100px] bg-[var(--rc-white)] text-[var(--rc-gray-900)] border border-[var(--rc-border)] rounded-xl focus-visible:ring-2 focus-visible:ring-[var(--rc-accent-400)]"
+              />
 
-                <Button
-                  type="submit"
-                  className="bg-[var(--rc-primary-500)] hover:bg-[var(--rc-primary-700)] text-white px-8 py-6 rounded-xl transition-all hover:shadow-lg cursor-pointer"
-                >
-                  Kontakt anfragen
-                  <ArrowRight className="ml-2" size={20} />
-                </Button>
-              </div>
+              {/* ✅ DSGVO Checkbox */}
+              <label className="flex items-start gap-3 mt-2 text-sm text-[var(--rc-gray-100)]">
+                <input
+                  type="checkbox"
+                  checked={consent}
+                  onChange={(e) => setConsent(e.target.checked)}
+                  className="mt-[2px] w-4 h-4 accent-[var(--rc-primary-500)] cursor-pointer"
+                  required
+                />
+                <span>
+                  Ich bin damit einverstanden, dass meine Daten zur Bearbeitung
+                  meiner Anfrage und zur Kontaktaufnahme gespeichert und
+                  verarbeitet werden. Weitere Informationen finden Sie in
+                  unserer{' '}
+                  <a
+                    href={withBase('/datenschutz')}
+                    className="underline text-[var(--rc-white)] hover:text-[var(--rc-gray-200)]"
+                    target="_blank"
+                  >
+                    Datenschutzerklärung
+                  </a>
+                  .
+                </span>
+              </label>
+
+              <Button
+                type="submit"
+                disabled={loading}
+                className="mt-4 bg-[var(--rc-primary-500)] hover:bg-[var(--rc-primary-700)] text-white px-8 py-6 rounded-xl transition-all hover:shadow-lg disabled:opacity-70"
+              >
+                {loading ? 'Senden…' : 'Kontakt anfragen'}
+                <ArrowRight className="ml-2" size={20} />
+              </Button>
             </form>
 
-            <p className="text-sm mt-6 opacity-80">
-              Wir melden uns persönlich mit weiteren Informationen.
-            </p>
+            {status === 'ok' && (
+              <p className="text-sm mt-6 opacity-90">
+                Danke! Wir haben Ihre Anfrage erhalten und melden uns zeitnah.
+              </p>
+            )}
+            {status === 'error' && (
+              <p className="text-sm mt-6 opacity-90">
+                Uups – etwas ist schiefgelaufen. Bitte versuchen Sie es später
+                erneut.
+              </p>
+            )}
           </div>
         </motion.div>
       </div>

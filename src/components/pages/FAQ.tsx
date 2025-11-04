@@ -8,14 +8,14 @@ import {
 export function FAQ() {
   const faqs = [
     {
-      question: 'Wie sicher ist ReportCube?',
+      question: 'Wie sicher ist Report Cube?',
       answer:
-        'ReportCube nutzt Sicherheit auf Unternehmensniveau mit Ende-zu-Ende-Verschlüsselung, DSGVO-Konformität und ISO 27001-Zertifizierung. Alle Daten werden in sicheren europäischen Rechenzentren gespeichert und niemals mit Dritten geteilt.',
+        'Report Cube nutzt Sicherheit auf Unternehmensniveau mit Ende-zu-Ende-Verschlüsselung, DSGVO-Konformität und ISO 27001-Zertifizierung. Alle Daten werden in sicheren europäischen Rechenzentren gespeichert und niemals mit Dritten geteilt.',
     },
     {
       question: 'Können wir unsere bestehenden Systeme anbinden?',
       answer:
-        'Ja, ReportCube bietet umfassende API-Integrationen und unterstützt die meisten gängigen Versicherungsmanagementsysteme. Unser Team bietet vollständige Unterstützung während der Implementierung, um nahtlose Konnektivität zu gewährleisten.',
+        'Ja, Report Cube bietet umfassende API-Integrationen und unterstützt die meisten gängigen Versicherungsmanagementsysteme. Unser Team bietet vollständige Unterstützung während der Implementierung, um nahtlose Konnektivität zu gewährleisten.',
     },
     {
       question: 'Welche Daten werden von der KI analysiert?',
@@ -47,7 +47,7 @@ export function FAQ() {
             Häufig gestellte Fragen
           </h2>
           <p className="text-lg text-[var(--rc-text-soft)]">
-            Alles, was Sie über ReportCube wissen müssen
+            Alles, was Sie über Report Cube wissen müssen
           </p>
         </div>
 
