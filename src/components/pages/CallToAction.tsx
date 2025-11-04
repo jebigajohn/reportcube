@@ -127,7 +127,6 @@ export function CallToAction() {
                   <a
                     href={withBase('/datenschutz')}
                     className="underline text-[var(--rc-white)] hover:text-[var(--rc-gray-200)]"
-                    target="_blank"
                   >
                     Datenschutzerklärung
                   </a>

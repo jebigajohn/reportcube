@@ -1,6 +1,6 @@
 export default function Datenschutz() {
   return (
-    <section className="py-20 md:py-24">
+    <section className="py-20 md:py-24" id="datenschutz">
       <div className="max-w-3xl mx-auto px-6">
         <h1 className="mb-6 text-[color:var(--rc-text)]">
           Datenschutzerklärung
