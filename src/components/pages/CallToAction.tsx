@@ -126,6 +126,12 @@ export function CallToAction() {
                   unserer{' '}
                   <a
                     href={withBase('/datenschutz')}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      const url = withBase('/datenschutz')
+                      window.history.pushState({}, '', url)
+                      window.dispatchEvent(new PopStateEvent('popstate'))
+                    }}
                     className="underline text-[var(--rc-white)] hover:text-[var(--rc-gray-200)]"
                   >
                     Datenschutzerklärung
